@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clientes</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h2>🚀 CRM Augusto</h2>
+
+        <a href="/">📊 Dashboard</a>
+
+        <a href="/clientes">👥 Clientes</a>
+
+        <a href="/cadastro">➕ Novo Cliente</a>
+
+        <a href="/logout">🚪 Sair</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>👥 Clientes</h1>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for categoria, mensagem in messages %}
+
+            <div class="alerta {{ categoria }}">
+                {{ mensagem }}
+            </div>
+
+            <br>
+
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+        <form action="/clientes" method="GET">
+
+            <input
+                type="text"
+                name="busca"
+                placeholder="Pesquisar cliente..."
+                value="{{ busca }}"
+            >
+
+            <br><br>
+
+            <button type="submit">
+                🔍 Buscar
+            </button>
+
+        </form>
+
+        <br>
+
+        {% for cliente in clientes %}
+
+        <div class="cliente">
+
+            <h2>{{ cliente[1] }}</h2>
+
+            <p><strong>📞 Telefone:</strong> {{ cliente[2] }}</p>
+
+            <p><strong>📝 Observações:</strong> {{ cliente[3] }}</p>
+
+            <p><strong>📅 Cadastro:</strong> {{ cliente[4] }}</p>
+
+            <a
+                class="whatsapp"
+                href="https://wa.me/55{{ cliente[2] }}"
+                target="_blank"
+            >
+                💬 WhatsApp
+            </a>
+
+            <br><br>
+
+            <a
+                class="editar"
+                href="/editar/{{ cliente[0] }}"
+            >
+                ✏️ Editar
+            </a>
+
+            &nbsp;&nbsp;&nbsp;
+
+            <a
+                class="excluir"
+                href="/excluir/{{ cliente[0] }}"
+            >
+                🗑️ Excluir
+            </a>
+
+        </div>
+
+        <br>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

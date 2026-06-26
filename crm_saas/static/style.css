@@ -1,0 +1,187 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+/* DASHBOARD */
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: #111827;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    color: white;
+    margin-bottom: 35px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: #1e293b;
+    padding: 14px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background: #2563eb;
+    transform: translateX(4px);
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.content h1 {
+    color: white;
+}
+
+.card {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 350px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.card p {
+    margin-top: 15px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* FORMULÁRIOS */
+
+form {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 600px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    background: #334155;
+    color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #cbd5e1;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* CLIENTES */
+
+.cliente {
+    background: #1e293b;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    border-left: 5px solid #2563eb;
+}
+
+.editar {
+    color: #22c55e;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.excluir {
+    color: #ef4444;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.voltar {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.whatsapp {
+    background: #25D366;
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-box {
+    background: #1e293b;
+    padding: 40px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.login-box h1 {
+    color: white;
+}
+
+.login-box p {
+    color: #cbd5e1;
+}
+
+.alerta {
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.sucesso {
+    background: #166534;
+    color: white;
+}
+
+.erro {
+    background: #991b1b;
+    color: white;
+}

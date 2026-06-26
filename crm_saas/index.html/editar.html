@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Cliente</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+</head>
+<body>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h2>🚀 CRM Augusto</h2>
+
+        <a href="/">📊 Dashboard</a>
+
+        <a href="/clientes">👥 Clientes</a>
+
+        <a href="/cadastro">➕ Novo Cliente</a>
+
+        <a href="/logout">🚪 Sair</a>
+
+    </div>
+
+    <div class="content">
+
+        <h1>✏️ Editar Cliente</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for categoria, mensagem in messages %}
+
+            <div class="alerta {{ categoria }}">
+                {{ mensagem }}
+            </div>
+
+            <br>
+
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+        <form action="/atualizar/{{ cliente[0] }}" method="POST">
+
+            <input
+                type="text"
+                name="nome"
+                value="{{ cliente[1] }}"
+                required
+            >
+
+            <br><br>
+
+            <input
+                type="text"
+                name="telefone"
+                value="{{ cliente[2] }}"
+                required
+            >
+
+            <br><br>
+
+            <textarea
+                name="observacoes"
+                rows="5"
+            >{{ cliente[3] }}</textarea>
+
+            <br><br>
+
+            <button type="submit">
+                💾 Salvar Alterações
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
